@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        /* Add any additional custom styles here */
+    </style>
+</head>
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" style="background-color: rgb(243, 93, 6);">
+            <!-- Logo or brand name, if needed -->
+            <a class="navbar-item" href="#">
+                <h4>My Blog</h4>
+            </a>
+            <!-- Optional toggle button for mobile -->
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu" style="background-color: rgb(243, 93, 6);"> 
+            <div class="navbar-end">
+                {{#if loggedIn}}
+                    <a class="navbar-item has-text-white" href="/posts">Home Page</a>
+                         <a class="navbar-item has-text-white" href="/dashboard">Dashboard</a>
+
+                    <a class="navbar-item has-text-white" href="/logout">Logout</a>
+                {{else}}
+                    <a class="navbar-item has-text-white" href="/signup">Sign Up</a>
+                    <a class="navbar-item has-text-white" href="/signin">Login</a>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Your main content goes here -->
+        {{{body}}}
+    </div>
+
+    <!-- Add any additional scripts here -->
+</body>
+</html>

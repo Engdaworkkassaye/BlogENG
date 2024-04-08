@@ -1,0 +1,22 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title is-1">Dashboard</h1>
+                            <a class="navbar-item has-text-green" href="/createPost">Create Post</a>
+
+        {{#each posts}}
+        <div class="box">
+            {{#if this.title}}
+            <h2 class="subtitle">{{this.title}}</h2>
+            {{/if}}
+            {{#if this.content}}
+            <p>{{this.content}}</p>
+            {{/if}}
+           
+             <a href="/editPost/{{this.id}}" class="button is-primary">Edit</a>
+        </div>
+           
+
+        <hr class="is-marginless">
+        {{/each}}
+    </div>
+</section>
